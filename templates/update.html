@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update or Delete</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+ <div class="page-header">
+    <h1>Update or Delete Employee records</h1>
+  </div>
+    <form action='/update' method='POST'>
+        <table class="table">
+            {% for data in result %}
+            <tr><td>ID</td><td><input type='text' name='id' value={{data['id']}}></td></tr>
+            <tr><td>Name</td><td><input type='text' name='name' value={{data['Name']}}></td></tr>
+            <tr><td>Salary</td><td><input type='text' name='salary' value={{data['Salary']}}></td></tr>
+            <tr><td>City</td><td><input type='text' name='city' value={{data['City']}}></td></tr>
+            <tr><td><input class="btn btn-default" type='submit' value='UPDATE'></td><td><a href="/delete/{{data['id']}}"><input class="btn btn-default" type="button" value="Delete"></a></td></tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+</html>
