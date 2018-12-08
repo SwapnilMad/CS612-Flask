@@ -1,4 +1,4 @@
-from flask import Flask,redirect, request
+from flask import Flask, request
 from EmployeeService import Service
 import json
 app=Flask(__name__)
@@ -21,4 +21,4 @@ def get_employees():
     return json.dumps(service.get_employees())
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=80)
