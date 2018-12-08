@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="page-header">
+    <h1>Add Employee</h1>
+  </div>
+<form method="POST" action="/add">
+<table class="table table-bordered">
+    <tr><td>ID</td><td><input type="text" name="id"></td></tr>
+    <tr><td>Name</td><td><input type="text" name="name"></td></tr>
+    <tr><td>Salary</td><td><input type="text" name="salary"></td></tr>
+    <tr><td>City</td><td><input type="text" name="city"></td></tr>
+    <tr><td colspan="2"><input class="btn btn-default" type="submit" value="Submit"></td></tr>
+</table>
+</form>
+</body>
+</html>
