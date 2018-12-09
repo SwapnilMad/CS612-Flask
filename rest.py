@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,Response
 from EmployeeService import Service
 import json
 app=Flask(__name__)
@@ -7,7 +7,7 @@ service = Service()
 @app.route('/employee/<string:empid>',methods=['GET','DELETE','PUT'])
 def get_employee(empid):
     if request.method=='GET':
-        return json.dumps(service.get_employee(empid))
+        return Response(json.dumps(service.get_employee(empid)),mimetype='application/json')
     elif request.method=='DELETE':
         service.remove_employee(empid)
     elif request.method=='PUT':
@@ -18,7 +18,7 @@ def get_employee(empid):
 def get_employees():
     if request.method=='POST':
         service.add_employee(request.get_json())
-    return json.dumps(service.get_employees())
+    return Response(json.dumps(service.get_employees()),mimetype='application/json')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)

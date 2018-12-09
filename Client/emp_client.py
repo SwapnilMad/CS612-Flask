@@ -2,7 +2,7 @@ from flask import redirect,Flask, render_template, request
 import requests
 
 app = Flask(__name__)
-url='http://localhost:8000'
+url='http://172.17.0.1:4000'
 @app.route('/')
 def get_employee_list():
     data = requests.get(url=url+'/employee').json()
