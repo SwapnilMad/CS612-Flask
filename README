@@ -1,8 +1,0 @@
-This is a python flask application run on flask
-rest.py acts as rest service provider
-emp_client.py acts as a client, consuming rest.py services
-images of both the files are uploaded on docker
-TO run the service 
-docker run -p 4000:80 sm94980n/repo1:emps
-To run the client 
-docker run -p 5000:8080 sm94980n/repo1:empc
